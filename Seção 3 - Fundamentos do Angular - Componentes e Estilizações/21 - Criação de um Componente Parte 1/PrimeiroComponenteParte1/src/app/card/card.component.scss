@@ -21,3 +21,27 @@
   }
 
 }
+/*ng-deep afeta qualquer componente que tem a classe que estou mudando indepedne se for componente filho ou nao(verifica ate os componentes diretos dos pais, ou seja tudo onde tem a classe). 
+Para nao afetar o componente fora do escopo do card, esse meu exemplo estoupegando o id do coponente e mudando o bg-color da classe interna .car-cancel-button.
+Posso fazer com classe caso eu queira que os componentes do card tenham a mesma atualização via uma classe externa:
+
+::ng-deep .cancel-button . card-cancel-button{
+background-color:yelow
+}
+
+ou posso colocar o nome da tag:
+::ng-deep  app-button-cancel .card-cancel-button{
+background-color:yelow
+}
+
+Com essas abordagem eu evito o transbordamento do ng-deep onde eu n quero
+*/
+
+::ng-deep #cancel-button .card-cancel-button{
+  background-color: yellow ;
+}
+
+// para classe eu devo usar o !important ja que id e mais especifico e nao precisa disso
+::ng-deep .cancel-button .card-cancel-button{
+  background-color: yellow !important;
+}
