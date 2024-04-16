@@ -21,6 +21,7 @@
   }
 
 }
+//ng-deep e para perfurar o view encapssulation. Entao se eu usa-lo no styles.css nao vai resultar em nada
 /*ng-deep afeta qualquer componente que tem a classe que estou mudando indepedne se for componente filho ou nao(verifica ate os componentes diretos dos pais, ou seja tudo onde tem a classe). 
 Para nao afetar o componente fora do escopo do card, esse meu exemplo estoupegando o id do coponente e mudando o bg-color da classe interna .car-cancel-button.
 Posso fazer com classe caso eu queira que os componentes do card tenham a mesma atualização via uma classe externa:
@@ -37,11 +38,19 @@ background-color:yelow
 Com essas abordagem eu evito o transbordamento do ng-deep onde eu n quero
 */
 
-::ng-deep #cancel-button .card-cancel-button{
-  background-color: yellow ;
-}
+// ::ng-deep #cancel-button .card-cancel-button{
+//   background-color: yellow ;
+// }
 
 // para classe eu devo usar o !important ja que id e mais especifico e nao precisa disso
-::ng-deep .cancel-button .card-cancel-button{
+// ::ng-deep .cancel-button .card-cancel-button{
+//   background-color: yellow !important;
+// }
+
+/*Para não transbordar as alterações do ng-deep posso usá-lo juntamente com o :host .
+Dessa maneira nao pricisarei usar de classe ou ids externos para isolar os efeitos do ng-deep*/
+
+:host ::ng-deep .card-cancel-button{
   background-color: yellow !important;
 }
+
