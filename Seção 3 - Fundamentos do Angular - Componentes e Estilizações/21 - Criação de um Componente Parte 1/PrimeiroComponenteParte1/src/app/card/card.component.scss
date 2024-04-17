@@ -54,3 +54,9 @@ Dessa maneira nao pricisarei usar de classe ou ids externos para isolar os efeit
   background-color: yellow !important;
 }
 
+
+// Manipulação local dentro do card.component  do slider do Angular Material
+
+:host ::ng-deep  mat-slider .mdc-slider__track--active_fill{ //Quanto mais especifico melhor, pois pode ocorrer do angular usar essa classe em outro local
+   border-color: yellowgreen !important;
+ }
