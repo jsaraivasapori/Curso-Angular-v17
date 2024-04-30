@@ -1,0 +1,19 @@
+<input id = "meu-input" [value]="inputText" [type]="inputType" [disabled]="isdisabled" [hidden]=ishidden>
+
+<br>
+<div style="display: flex; flex-direction: column; justify-content:space-between; align-items:flex-start; margin-top: 1rem;">
+<button (click)="disabledToggleInput()">Desabilitar</button>
+<button (click)="disabledToggleInput()">Habilitar</button>
+<br>
+<button (click)="hiddenToggleInput()">Esconder Input</button>
+<button (click)="hiddenToggleInput()">Mostar Input</button>
+<br>
+<button (click)="setPasswordTypeInput()">Senha</button>
+<button (click)="setTextTypeInput()">Texto</button>
+<br>
+<button (click)="logInputText()">Log</button>
+</div>
+
+
+<!-- ()="" HTML para o TS.  Adcionado evento na tag por envio de um evento ao TS-->
+<!-- []="" TS para o HTML  Valor da propriedade da tag mudada por ts, HTML recebe novo valor da propriedade-->
