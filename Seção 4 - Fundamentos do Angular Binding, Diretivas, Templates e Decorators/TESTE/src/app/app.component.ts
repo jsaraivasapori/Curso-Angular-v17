@@ -28,4 +28,14 @@ export class AppComponent {
   logInputText() : void {
     console.log(this.inputText)
   }
+  handleInputKeyup(event:KeyboardEvent) : void{
+    const currentText = (event.target as HTMLInputElement)//tipa o input com casting para poder acessar event.target.value, sem isso da erro de compilação pois n se sabe se tera o value
+    console.log(currentText.value);
+  }
+  handleInputEvent(event:Event) : void{
+    //casting
+    const currentText = (event.target as HTMLInputElement)
+    console.log(currentText.value);
+    
+  }
 }

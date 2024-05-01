@@ -1,4 +1,11 @@
-<input id = "meu-input" [value]="inputText" [type]="inputType" [disabled]="isdisabled" [hidden]=ishidden>
+<input 
+id = "meu-input"
+[value]="inputText"
+[type]="inputType" 
+[disabled]="isdisabled" 
+[hidden]=ishidden
+
+(input)="handleInputEvent($event)">
 
 <br>
 <div style="display: flex; flex-direction: column; justify-content:space-between; align-items:flex-start; margin-top: 1rem;">
@@ -15,5 +22,5 @@
 </div>
 
 
-<!-- ()="" HTML para o TS.  Adcionado evento na tag por envio de um evento ao TS-->
-<!-- []="" TS para o HTML  Valor da propriedade da tag mudada por ts, HTML recebe novo valor da propriedade-->
+<!-- Event Binding: (recebendUmEventoQuePodeTerValor)="" HTML para o TS.  Adcionado evento na tag por envio de um evento ao TS--> 
+<!-- Property Binding:  [enviandoUmValorParaPorpiredade]="" TS para o HTML  Valor da propriedade da tag mudada por ts, HTML recebe novo valor da propriedade-->
