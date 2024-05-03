@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  
+  buttonClicked(valueEmitted : boolean) : void{
+    console.log('buttonClicked- componente pai valor:',valueEmitted)
+  }
 }
