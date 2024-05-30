@@ -1,6 +1,6 @@
-<app-button [text]="'Adquirir'" [style]="'white'" [disabled]="true" (clicked)="buttonClicked()"></app-button> 
+<app-button [text]="'Adquirir'" [style]="'white'" [disabled]="false" (clicked)="buttonClicked()"></app-button> 
 
 <!--O [style] = ... envia o ... para o filho-->
-<!--O (clicked)= ... recebe do filho por meio do alias clicked e passa para o metodo ... do pais-->
+<!--O (clicked)= ... recebe do filho por meio do alias clicked e passa para o  evento x ao compopnente  pai que executa um metodo atrelado a ele-->
 
 <app-button [text]="'Adquirir'" [style]="'purple'"></app-button>
