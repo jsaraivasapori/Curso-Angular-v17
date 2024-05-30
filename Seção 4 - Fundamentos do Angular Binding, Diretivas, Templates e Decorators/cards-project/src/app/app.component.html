@@ -1,6 +1,23 @@
-<app-button [text]="'Adquirir'" [style]="'white'" [disabled]="false" (clicked)="buttonClicked()"></app-button> 
+<!-- <app-button [text]="'Adquirir'" [style]="'white'" [disabled]="false" (clicked)="buttonClicked()"></app-button>  -->
 
 <!--O [style] = ... envia o ... para o filho-->
 <!--O (clicked)= ... recebe do filho por meio do alias clicked e passa para o  evento x ao compopnente  pai que executa um metodo atrelado a ele-->
 
-<app-button [text]="'Adquirir'" [style]="'purple'"></app-button>
+<!-- <app-button [text]="'Adquirir'" [style]="'purple'"></app-button> -->
+
+
+<div class="cards-container">
+  <app-card
+  [planType]="cardSimples.tipo"
+  [planPrice]="cardSimples.valor"
+  [cardStyle]="'orange'"
+  (buttonClicked)="onCardButtonClicked()"
+  ></app-card>
+  
+  <app-card
+  [planType]="cardCompleto.tipo"
+  [planPrice]="cardCompleto.valor"
+  [cardStyle]="'purple'"
+  (buttonClicked)="onCardButtonClicked()"
+  ></app-card>
+</div>

@@ -7,8 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  buttonClicked(): void{
-    console.log('Button Clicked');
-    
+  cardSimples = {
+    tipo: 'Simples',
+    valor: 100,
+  }
+
+  cardCompleto = {
+    tipo: 'Completo',
+    valor: 200
+  }
+
+
+  onCardButtonClicked(){
+    console.log('onCardButtonClicked');
+    //Aqui entraria uma chamada Http. Sempre faz no componente pai.
+    //pois os filhos podem ser reutilizaveis em outros locais
   }
 }
