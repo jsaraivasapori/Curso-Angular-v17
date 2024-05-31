@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'diretiva-NgFor';
+
+  personSelectedIndex : number | undefined
+
+  peopleList = [
+    {
+      name: 'João Vitor',
+      age: 24
+    },
+    {
+      name: 'Vitor',
+      age: 44
+    },
+    {
+      name:"Matheus",
+      age: 44
+    },
+    {
+      name:"Rosangela",
+      age: 54
+    }
+  ]
+
+  selectPerson(index:number){
+    this.personSelectedIndex = index
+    
+  }
 }
