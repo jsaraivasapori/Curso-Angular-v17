@@ -1,25 +1,22 @@
 <div class="list">
 
-  <div class="item "
-  *ngFor="let person of peopleList; 
+<app-person
+  *ngFor="
+  let person of peopleList; 
   let i = index;
-  let isOdd = odd, 
-  let isEven = even; 
-  let isFirst = first; 
-  let isLast =last"
-  [class.item--odd]="isOdd"
-  (click)="selectPerson(i+1)"
-  [class.item--highlighted]="personSelectedIndex===i+1">
-
-    <p class="item__name"> {{i+1}}-{{person.name}}</p>
-
-    <p class="item__age"> {{person.age}}</p>
-
-    <p class="item__age" *ngIf="isFirst"> É o primeiro da lista</p>
-    <p class="item__age" *ngIf="isLast"> É o último da lista</p>
-
-  </div>
- 
+  let isFirst = first;
+  let isLast = last;
+  let isOdd = odd"
+  [personName]="person.name"
+  [personAge]="person.age"
+  [personIndex]="i"
+  [isFirst]="isFirst"
+  [isLast]="isLast"
+  [isOdd]="isOdd"
+  [isSelected]="personSelectedIndex === i "
+  (onPersonSelectedEmit)="selectPerson($event)
+  " 
+></app-person>
 </div>
 
 
